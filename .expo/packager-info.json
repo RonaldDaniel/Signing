@@ -1,8 +1,8 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 12768,
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
   "expoServerNgrokUrl": "https://f2-yvv.anonymous.archive.exp.direct",
   "packagerNgrokUrl": "https://packager.f2-yvv.anonymous.archive.exp.direct",
   "ngrokPid": 6772,
