@@ -1335,7 +1335,7 @@ class Signup extends React.Component {
     const {navigate } = this.props.navigation
     this.setState({signUping: true})
     if (this.state.password !== this.state.confirmPass) {
-      alert('password is not correct')
+      alert('Alert: Password and confirm password do not match')
       this.setState({signUping: false})
       return 0 ;
     }
@@ -1366,27 +1366,6 @@ class Signup extends React.Component {
         alert('something went wrong')
         this.setState({signUping: false})
       })
-  }
-
-  async localStorage() {
-    console.log('Local test')
-    try {
-      await AsyncStorage.setItem('Token','true');
-    } catch (err) {
-        console.log('Async ===>>>',err)
-    }
-
-    // try {
-    //   const value = await AsyncStorage.getItem('Token');
-    //   if(value === null){
-    //     console.log(null)
-    //   }
-    //   if(value !== null){
-    //     console.log(value)
-    //   }
-    // } catch (err) {
-    //     console.log('Async ===>>>',err)
-    // }
   }
 
   render() {
@@ -1834,8 +1813,18 @@ const MainNavigator = createStackNavigator({
  
 
 
-  Signup: {screen: Signup}, 
-  Login: {screen: Login},  
+  Signup: {
+            screen: Signup,
+            navigationOptions: {
+              gesturesEnabled: false
+            }
+          }, 
+  Login: {
+            screen: Login,
+            navigationOptions: {
+              gesturesEnabled: false
+            }
+          },  
   Main: { 
 
 
