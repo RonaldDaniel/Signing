@@ -1355,6 +1355,7 @@ class Signup extends React.Component {
         if (res.success) {
           navigate('Main')
           AsyncStorage.setItem('Token','true');
+          this.setState({signUping: false})
         }
         else {
           alert(res.responseMessage)
