@@ -1839,12 +1839,14 @@ const MainNavigator = createStackNavigator({
           },  
   Main: { 
 
+    navigationOptions: {
+      gesturesEnabled: false
+    },
 
     screen: createMaterialBottomTabNavigator({
       Classes: { 
         screen: Classes,
         navigationOptions: {
-          gesturesEnabled: false,
           tabBarIcon: ({ tintColor, focused }) => (
             <TabBarIconCustom title="Classes" tintColor={tintColor} icon="th-large"/>
           ),
@@ -1854,7 +1856,6 @@ const MainNavigator = createStackNavigator({
       Packages: { 
         screen: Packages,
         navigationOptions: {
-          gesturesEnabled: false,
           tabBarIcon: ({ tintColor, focused }) => (
             <TabBarIconCustom title="Packages" tintColor={tintColor} icon="bookmark"/>
           )
@@ -1863,7 +1864,6 @@ const MainNavigator = createStackNavigator({
       Account: { 
         screen: Account,
         navigationOptions: {
-          gesturesEnabled: false,
           tabBarIcon: ({ tintColor, focused }) => (
 
             <TabBarIconCustom title="Account" tintColor={tintColor} icon="user"/>
