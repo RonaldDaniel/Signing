@@ -1353,9 +1353,9 @@ class Signup extends React.Component {
       .then(res => {
         console.log(res);
         if (res.success) {
+          this.setState({signUping: false})
           navigate('Main')
           AsyncStorage.setItem('Token','true');
-          this.setState({signUping: false})
         }
         else {
           alert(res.responseMessage)
@@ -1538,7 +1538,18 @@ class Login extends React.Component {
       });
 
       this.setState({ fontLoaded: true });
-   
+      
+      try {
+        const value = await AsyncStorage.getItem('Token');
+        if(value === null){
+          await AsyncStorage.setItem('Token','false');
+        }
+        if(value !== null && value === 'true'){
+          navigate('Main')
+        }
+      } catch (err) {
+          console.log('Async ===>>>',err)
+      }
   }
 
   login() {
